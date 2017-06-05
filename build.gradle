@@ -1,0 +1,23 @@
+// Apply the java-library plugin to add support for Java Library
+apply plugin: 'java-library'
+apply plugin: 'war'
+apply plugin : 'eclipse'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile project(':e-shopping-cart-core')
+	compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.4.1'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.4.1.1'
+	compile 'javax.servlet:jstl:1.2'
+    
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    testCompile 'org.springframework:spring-test:4.1.8.RELEASE'
+    testCompile 'javax.servlet:javax.servlet-api:3.1.0'
+}
+
