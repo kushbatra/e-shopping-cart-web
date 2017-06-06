@@ -1,0 +1,31 @@
+<script id="confirmation-template" type="text/x-handlebars-template">
+<div class="page-head">
+	<div class="container">
+		<h3>Confirmation</h3>
+	</div>
+</div>
+<!-- //banner -->
+<!-- check out -->
+<div class="checkout">
+	<div class="container">
+			<div class="checkout-left-basket animated wow slideInLeft" style="align:center"
+				data-wow-delay=".5s">
+				<h4>Shopping basket</h4>
+				<ul>
+					{{#each product}}
+						<li>{{this.productName}} <i>-</i> <span>${{this.totalprice}}</span></li>
+					{{/each}}
+				</ul>
+				<ul>
+					<li>Total Price <i>-</i><span>${{total}}</span></li>
+				</ul>
+				
+				</div>
+				</h1> Your order is placed. Thank you!</h1>
+			</div>
+			<div class="clearfix"></div>
+			
+		</div>
+	</div>
+</div>
+</script>

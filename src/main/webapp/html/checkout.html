@@ -22,10 +22,10 @@
 					</tr>
 				</thead>
 				{{#each product}}
-				<tr class="rem{{counter @index}}">
+				<tr class="rem{{this.productId}}">
 					<td class="invert-closeb">
 						<div class="rem">
-							<div class="close{{counter @index}}"></div>
+							<div id="{{this.productId}}" class="close{{this.productId}}"></div>
 						</div> <!-- script>$(document).ready(function(c) {
 								$('.close1').on('click', function(c){
 									$('.rem1').fadeOut('slow', function(c){
@@ -41,7 +41,7 @@
 						<div class="quantity">
 							<div class="quantity-select">
 								<div class="entry value-minus">&nbsp;</div>
-								<div class="entry value">
+								<div id="{{this.productId}}" class="entry value">
 									<span>{{this.quantity}}</span>
 								</div>
 								<div class="entry value-plus active">&nbsp;</div>
@@ -49,7 +49,7 @@
 						</div>
 					</td>
 					<td class="invert">{{this.productName}}</td>
-					<td class="invert">${{this.price}}</td>
+					<td class="invert">${{this.totalprice}}</td>
 				</tr>
 				{{/each}}
 			</table>
@@ -58,13 +58,13 @@
 
 			<div class="checkout-right-basket animated wow slideInRight"
 				data-wow-delay=".5s">
-				<a href="html/mens.html"><span
+				<a id="_back" href=""><span
 					class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Back
 					To Shopping</a>
 			</div>
 			<div class="checkout-right-basket animated wow slideInRight"
 				data-wow-delay=".5s" style="margin-left: 100px">
-				<a href="html/mens.html"><span class="glyphicon "
+				<a id="place_order" href=""><span class="glyphicon "
 					aria-hidden="true"></span>Place Order</a>
 			</div>
 			<div class="checkout-left-basket animated wow slideInLeft"
@@ -72,8 +72,11 @@
 				<h4>Shopping basket</h4>
 				<ul>
 					{{#each product}}
-						<li>{{this.productName}} <i>-</i> <span>${{this.price}}</span></li>
+						<li>{{this.productName}} <i>-</i> <span>${{this.totalprice}}</span></li>
 					{{/each}}
+				</ul>
+				<ul>
+					<li>Total Price <i>-</i><span>${{total}}</span></li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
