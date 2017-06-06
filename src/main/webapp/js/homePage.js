@@ -3,6 +3,7 @@ var homePage = {
 	init : function() {
 		//alert('homePage-init');
 		this.setUpEvents();
+		$('#empty_cart').click();
 	},
 
 	setUpEvents : function() {
@@ -37,7 +38,11 @@ var homePage = {
 		});
 		$("#checkout").click(function(e) {
 			//alert('checkout');
-			$("#main-body").load("html/checkout.html");
+			utility.setTemplate("html/checkout.html","#main-body");
+			e.preventDefault();
+		});
+		$("#empty_cart").click(function(e) {
+			checkoutPage.cartData.product = [];
 			e.preventDefault();
 		});
 	}

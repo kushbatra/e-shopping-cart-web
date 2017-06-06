@@ -22,10 +22,10 @@
 					</tr>
 				</thead>
 				{{#each product}}
-				<tr class="rem{{this.SNo}}">
+				<tr class="rem{{counter @index}}">
 					<td class="invert-closeb">
 						<div class="rem">
-							<div class="close{{this.SNo}}"></div>
+							<div class="close{{counter @index}}"></div>
 						</div> <!-- script>$(document).ready(function(c) {
 								$('.close1').on('click', function(c){
 									$('.rem1').fadeOut('slow', function(c){
@@ -52,111 +52,6 @@
 					<td class="invert">${{this.price}}</td>
 				</tr>
 				{{/each}}
-				<!-- tr class="rem2">
-						<td class="invert-closeb">
-							<div class="rem">
-								<div class="close2"> </div>
-							</div>
-							<!--script>$(document).ready(function(c) {
-								$('.close2').on('click', function(c){
-									$('.rem2').fadeOut('slow', function(c){
-										$('.rem2').remove();
-									});
-									});	  
-								});
-						   </script-->
-				</td>
-				<td class="invert-image"><a href="single.html"><img
-						src="images/ep3.png" alt=" " class="img-responsive" /></a></td>
-				<td class="invert">
-					<div class="quantity">
-						<div class="quantity-select">
-							<div class="entry value-minus">&nbsp;</div>
-							<div class="entry value">
-								<span>1</span>
-							</div>
-							<div class="entry value-plus active">&nbsp;</div>
-						</div>
-					</div>
-				</td>
-				<td class="invert">Watches</td>
-				<td class="invert">$45.99</td>
-
-				</tr>
-				<tr class="rem3">
-					<td class="invert-closeb">
-						<div class="rem">
-							<div class="close3"></div>
-						</div> <!--script>$(document).ready(function(c) {
-								$('.close3').on('click', function(c){
-									$('.rem3').fadeOut('slow', function(c){
-										$('.rem3').remove();
-									});
-									});	  
-								});
-						   </script-->
-					</td>
-					<td class="invert-image"><a href="single.html"><img
-							src="images/w2.png" alt=" " class="img-responsive" /></a></td>
-					<td class="invert">
-						<div class="quantity">
-							<div class="quantity-select">
-								<div class="entry value-minus">&nbsp;</div>
-								<div class="entry value">
-									<span>1</span>
-								</div>
-								<div class="entry value-plus active">&nbsp;</div>
-							</div>
-						</div>
-					</td>
-					<td class="invert">Sandals</td>
-					<td class="invert">$45.99</td>
-
-				</tr>
-				<tr class="rem4">
-					<td class="invert-closeb">
-						<div class="rem">
-							<div class="close4"></div>
-						</div> <!--script>$(document).ready(function(c) {
-								$('.close4').on('click', function(c){
-									$('.rem4').fadeOut('slow', function(c){
-										$('.rem4').remove();
-									});
-									});	  
-								});
-						   </script-->
-					</td>
-					<td class="invert-image"><a href="single.html"><img
-							src="images/w1.png" alt=" " class="img-responsive" /></a></td>
-					<td class="invert">
-						<div class="quantity">
-							<div class="quantity-select">
-								<div class="entry value-minus">&nbsp;</div>
-								<div class="entry value">
-									<span>1</span>
-								</div>
-								<div class="entry value-plus active">&nbsp;</div>
-							</div>
-						</div>
-					</td>
-					<td class="invert">Wedges</td>
-					<td class="invert">$45.99</td>
-
-					</tr-->
-
-					<!--quantity-->
-					<!-- script>
-									$('.value-plus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
-										divUpd.text(newVal);
-									});
-
-									$('.value-minus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
-										if(newVal>=1) divUpd.text(newVal);
-									});
-									</script-->
-					<!--quantity-->
 			</table>
 		</div>
 		<div class="checkout-left">
@@ -176,11 +71,9 @@
 				data-wow-delay=".5s">
 				<h4>Shopping basket</h4>
 				<ul>
-					<li>Hand Bag <i>-</i> <span>$45.99</span></li>
-					<li>Watches <i>-</i> <span>$45.99</span></li>
-					<li>Sandals <i>-</i> <span>$45.99</span></li>
-					<li>Wedges <i>-</i> <span>$45.99</span></li>
-					<li>Total <i>-</i> <span>$183.96</span></li>
+					{{#each product}}
+						<li>{{this.productName}} <i>-</i> <span>${{this.price}}</span></li>
+					{{/each}}
 				</ul>
 			</div>
 			<div class="clearfix"></div>

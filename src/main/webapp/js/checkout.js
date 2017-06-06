@@ -1,30 +1,7 @@
 var checkoutPage = {
 	flag : true,
-	jsonData : {
-		product : [ {
-			"productId" : 1,
-			"path" : "",
-			"quantity" : "",
-			"productName" : "Teek Wood 4 Chairs Set",
-			"price" : ""
-		} ]
-	},
-	testJsonData : {
-		product : [ {
-			"SNo" : 1,
-			"productId" : 1,
-			"path" : "tables1.jpg",
-			"quantity" : 1,
-			"productName" : "Teek Wood 4 Chairs Set",
-			"price" : 650
-		}, {
-			"SNo" : 2,
-			"productId" : 3,
-			"path" : "tables3.jpg",
-			"quantity" : 1,
-			"productName" : "Birstrom wood 6 Chairs Set",
-			"price" : 800
-		} ]
+	cartData : {
+		product : []
 	},
 	init : function() {
 		//alert('checkout-init');
@@ -72,6 +49,45 @@ var checkoutPage = {
 			alert('ts1_cart');
 
 			e.preventDefault();
+		});
+		$('.value-plus').on('click', function(){
+			var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+			if(newVal<=3) divUpd.text(newVal);
+		});
+		$('.value-minus').on('click', function(){
+			var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+			if(newVal>=1) divUpd.text(newVal);
+		});
+		$('.close1').on('click', function(c){
+			alert('close1');
+			$('.rem1').fadeOut('slow', function(c){
+				$('.rem1').remove();
+			});	  
+		});
+		$('.close2').on('click', function(c){
+			$('.rem2').fadeOut('slow', function(c){
+				$('.rem2').remove();
+			});	  
+		});
+		$('.close3').on('click', function(c){
+			$('.rem3').fadeOut('slow', function(c){
+				$('.rem3').remove();
+			});	  
+		});
+		$('.close4').on('click', function(c){
+			$('.rem4').fadeOut('slow', function(c){
+				$('.rem4').remove();
+			});	  
+		});
+		$('.close5').on('click', function(c){
+			$('.rem5').fadeOut('slow', function(c){
+				$('.rem5').remove();
+			});	  
+		});
+		$('.close6').on('click', function(c){
+			$('.rem6').fadeOut('slow', function(c){
+				$('.rem6').remove();
+			});  
 		});
 	}
 }

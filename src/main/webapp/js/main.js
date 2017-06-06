@@ -18,3 +18,7 @@ jQuery(document).ready(
 Handlebars.registerHelper('toLowerCase', function(str) {
 	return str.toLowerCase();
 });
+
+Handlebars.registerHelper('counter', function (index){
+    return index + 1;
+});

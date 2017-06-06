@@ -45,7 +45,19 @@ var utility = {
 			}
 		});
 	},
-	renderOutput : function(data) {
-
+	setTemplate : function(path, divId) {
+		$.ajax({
+			url : path,
+			success : function(content) {
+				//alert("SetTemplateContent:" + content);
+				//alert(path + " : " + divId);
+				var template = $(content).html();
+				//alert(template);
+				var theTemplate = Handlebars.compile(template);
+				var theCompiledHtml = theTemplate(checkoutPage.cartData);
+				$(divId).html(theCompiledHtml);
+				checkoutPage.init();
+			}
+		});
 	}
 }
