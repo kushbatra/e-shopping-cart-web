@@ -53,10 +53,10 @@ var utility = {
 				var theTemplate = Handlebars.compile(template);
 				var theCompiledHtml = theTemplate(checkoutPage.cartData);
 				$(divId).html(theCompiledHtml);
-				if(path=='html/confirmation.html') {
-					$('#empty_cart').click();
-					checkoutPage.cartData.total=0;
-				}
+				//if(path=='html/confirmation.html') {
+				//	$('#empty_cart').click();
+				//	checkoutPage.cartData.total=0;
+				//}
 				checkoutPage.init();
 			}
 		});
