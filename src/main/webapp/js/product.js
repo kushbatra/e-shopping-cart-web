@@ -99,7 +99,7 @@ var productPage = {
 				counter++;
 						if(this.productId == data.productId) {
 							this.quantity = this.quantity + 1;
-							this.price = this.totalprice + data.price;
+							this.totalprice = this.totalprice + data.price;
 							flag=false;
 						} else {
 							if(counter == checkoutPage.cartData.product.length && flag) {
