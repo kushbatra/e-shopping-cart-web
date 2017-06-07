@@ -13,12 +13,10 @@ var utility = {
 				//alert('Success Data Here:' + JSON.stringify(jsonData));
 				var afterAjax = function() {
 					var menubarTemplate = $(pageContent).html();
-					//alert('Template: ' + menubarTemplate);
 					var theTemplate = Handlebars.compile(menubarTemplate);
 					if (htmlPath == 'html/checkout.html') {
 						jsonData = data;
 					}
-					//alert('Checkout Data: ' + JSON.stringify(jsonData));
 					var theCompiledHtml = theTemplate(jsonData);
 					$(divId).html(theCompiledHtml);
 					// Required so that js is not initialized multiple times
@@ -49,8 +47,6 @@ var utility = {
 		$.ajax({
 			url : path,
 			success : function(content) {
-				//alert("SetTemplateContent:" + content);
-				//alert(path + " : " + divId);
 				var template = $(content).html();
 				//alert(template);
 				var theTemplate = Handlebars.compile(template);

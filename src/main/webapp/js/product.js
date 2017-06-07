@@ -1,14 +1,12 @@
 var productPage = {
 	flag : true,
 	init : function() {
-		//alert('product-init');
 		this.setUpEvents();
 	},
 
 	setUpEvents : function() {
 		$("#tables_quick_view_0").click(
 				function(e) {
-					//alert('ts1_quick_view');
 					var data = {
 						"productId" : "1"
 					};
@@ -19,8 +17,6 @@ var productPage = {
 				});
 		$("#tables_quick_view_1").click(
 				function(e) {
-					//alert('ts1_quick_view');
-					// $("#main-body").load("html/description.html");
 					var data = {
 						"productId" : "2"
 					};
@@ -31,8 +27,6 @@ var productPage = {
 				});
 		$("#beds_quick_view_0").click(
 				function(e) {
-					//alert('ts1_quick_view');
-					// $("#main-body").load("html/description.html");
 					var data = {
 						"productId" : "3"
 					};
@@ -43,8 +37,6 @@ var productPage = {
 				});
 		$("#beds_quick_view_1").click(
 				function(e) {
-					//alert('ts1_quick_view');
-					// $("#main-body").load("html/description.html");
 					var data = {
 						"productId" : "4"
 					};
@@ -58,10 +50,7 @@ var productPage = {
 					var data = {"productId" : 1,"path" : "tables1.jpg", "quantity" : 1,
 															"productName" : "Teek Wood 4 Chairs",
 															"price" : 650, "totalprice":650};
-					//alert('cart click before: ' + JSON.stringify(checkoutPage.cartData));
 					productPage.addCart(data);
-					//alert('cart click after: ' + JSON.stringify(checkoutPage.cartData));
-					
 					e.preventDefault();
 				}
 			);
@@ -70,10 +59,7 @@ var productPage = {
 					var data = {"productId" : 2,"path" : "tables2.jpg", "quantity" : 1,
 															"productName" : "Hard Wood 6 Chairs",
 															"price" : 700, "totalprice":700};
-					//alert('cart click before: ' + JSON.stringify(checkoutPage.cartData));
 					productPage.addCart(data);
-					//alert('cart click after: ' + JSON.stringify(checkoutPage.cartData));
-					
 					e.preventDefault();
 				}
 			);
@@ -94,10 +80,7 @@ var productPage = {
 					var data = {"productId" : 4,"path" : "beds4.jpg", "quantity" : 1,
 															"productName" : "Trundle bed",
 															"price" : 1100, "totalprice":1100};
-					//alert('cart click before: ' + JSON.stringify(checkoutPage.cartData));
 					productPage.addCart(data);
-					//alert('cart click after: ' + JSON.stringify(checkoutPage.cartData));
-					
 					e.preventDefault();
 				}
 			);

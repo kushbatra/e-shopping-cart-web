@@ -1,5 +1,6 @@
 var checkoutPage = {
 	flag : true,
+	//Global variable to handle cart data.
 	cartData : {
 		product : [],
 		total:0
@@ -10,37 +11,6 @@ var checkoutPage = {
 	},
 
 	setUpEvents : function() {
-		/*$("#checkout").click(
-				function(e) {
-					alert("checkout2");
-					utility.getData("GET", "home/getCategories",
-							checkoutPage.testJsonData, "html/description.html",
-							"#description-template", "#main-body");
-					e.preventDefault();
-				});*/
-		$("#tables_cart_0").click(function(e) {
-			//alert('ts1_cart');
-
-			e.preventDefault();
-		});
-		$("#tables_cart_1").click(function(e) {
-			//alert('ts1_cart');
-
-			e.preventDefault();
-		});
-		$("#beds_cart_0").click(function(e) {
-			//alert('ts1_cart');
-			// $("#main-body").load("html/description.html");
-			// var data = {"productId": "4"};
-			// utility.getData("GET", "home/getProductInfo", data,
-			// "html/description.html", "#description-template", "#main-body");
-			e.preventDefault();
-		});
-		$("#beds_cart_1").click(function(e) {
-			//alert('ts1_cart');
-
-			e.preventDefault();
-		});
 		$('.value-plus').on('click', function(){
 			var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
 			var productId = $(this).parent().find('.value').attr('id');
@@ -52,23 +22,18 @@ var checkoutPage = {
 		$('.value-minus').on('click', function(){
 			var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
 			var productId = $(this).parent().find('.value').attr('id');
-			//alert('cart click before: ' + JSON.stringify(checkoutPage.cartData));
 			checkoutPage.removeCart(productId);
-			//alert('cart click after: ' + JSON.stringify(checkoutPage.cartData));
 			if(newVal>=1) divUpd.text(newVal);
 		});
 		$('.close1').on('click', function(c){
-			//alert('close1: ' + JSON.stringify(checkoutPage.cartData.product));
 			var productId = $(this).attr('id');
 			checkoutPage.deleteCart(productId);	  
 		});
 		$('.close2').on('click', function(c){
-			//alert('close2: ' + JSON.stringify(checkoutPage.cartData.product));
 			var productId = $(this).attr('id');
 			checkoutPage.deleteCart(productId);  
 		});
 		$('.close3').on('click', function(c){
-			//alert('close3: ' + JSON.stringify(checkoutPage.cartData.product));
 			var productId = $(this).attr('id');
 			checkoutPage.deleteCart(productId);  
 		});
@@ -85,7 +50,7 @@ var checkoutPage = {
 			e.preventDefault();
 		});
 		$('#_back').on('click', function(e) {
-			alert('Back');
+			//alert('Back');
 			$("#main-body").load("html/default.html");
 			e.preventDefault();
 		});

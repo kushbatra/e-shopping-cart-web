@@ -43,6 +43,7 @@ var homePage = {
 		});
 		$("#empty_cart").click(function(e) {
 			checkoutPage.cartData.product = [];
+			checkoutPage.cartData.total = 0;
 			e.preventDefault();
 		});
 	}
