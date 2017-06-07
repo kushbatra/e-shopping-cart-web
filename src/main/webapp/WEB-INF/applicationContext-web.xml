@@ -13,12 +13,12 @@
         http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 		
-		<context:annotation-config />
+		<!-- context:annotation-config />
 		
 		<aop:aspectj-autoproxy>
 			<aop:include name="logAspect"/>
 		</aop:aspectj-autoproxy>
-		<bean id="logAspect" class="com.kush.common.CentralLogger" />
+		<bean id="logAspect" class="com.kush.common.CentralLogger" /-->
 		
 
 </beans>

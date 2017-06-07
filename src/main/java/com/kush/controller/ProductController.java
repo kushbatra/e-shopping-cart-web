@@ -2,6 +2,7 @@ package com.kush.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import com.kush.beans.Product;
 import com.kush.beans.ProductResponse;
 import com.kush.beans.ProductType;
 import com.kush.beans.RequestData;
+import com.kush.common.StatusCode;
 import com.kush.beans.CategoryProductsResponse;
 
 /**
@@ -27,6 +29,8 @@ import com.kush.beans.CategoryProductsResponse;
 @RestController
 public class ProductController {
 	
+	final static Logger logger = Logger.getLogger(ProductController.class);
+	
 	@Autowired
 	private ProductService productService;
 	
@@ -34,7 +38,16 @@ public class ProductController {
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	public CategoryResponse getCategoriesType() {
 		CategoryResponse response = new CategoryResponse();
-		List<Category> catType = productService.getCategoryType();
+		List<Category> catType = null;
+		try {
+			catType = productService.getCategoryType();
+			response.setCode(StatusCode.SUCCESS);
+			response.setCodeDesc("Success");
+		} catch(Exception e) {
+			logger.error("productService Info is null");
+			response.setCode(StatusCode.CATEGORY_INFO_ERROR);
+			response.setCodeDesc("Categories Not found");
+		}
 		response.setCategory(catType);
 		return response;
 	}

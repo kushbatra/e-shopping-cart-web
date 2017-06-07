@@ -51,6 +51,7 @@ var productPage = {
 															"productName" : "Teek Wood 4 Chairs",
 															"price" : 650, "totalprice":650};
 					productPage.addCart(data);
+					alert('Product added to cart');
 					e.preventDefault();
 				}
 			);
@@ -60,6 +61,7 @@ var productPage = {
 															"productName" : "Hard Wood 6 Chairs",
 															"price" : 700, "totalprice":700};
 					productPage.addCart(data);
+					alert('Product added to cart');
 					e.preventDefault();
 				}
 			);
@@ -70,6 +72,7 @@ var productPage = {
 															"price" : 950, "totalprice":950};
 					//alert('cart click before: ' + JSON.stringify(checkoutPage.cartData));
 					productPage.addCart(data);
+					alert('Product added to cart');
 					//alert('cart click after: ' + JSON.stringify(checkoutPage.cartData));
 					
 					//e.preventDefault();
@@ -81,6 +84,7 @@ var productPage = {
 															"productName" : "Trundle bed",
 															"price" : 1100, "totalprice":1100};
 					productPage.addCart(data);
+					alert('Product added to cart');
 					e.preventDefault();
 				}
 			);

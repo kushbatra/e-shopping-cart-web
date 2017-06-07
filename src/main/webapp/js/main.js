@@ -9,7 +9,8 @@ jQuery(document).ready(
 			$("#banner-grids").load("html/banner-grid.html");
 			$("#main-body").load("html/default.html");
 			$("#footer").load("html/footer.html");
-			// homePage.init();
+			checkoutPage.cartData.product = [];
+			checkoutPage.cartData.total = 0;
 
 			utility.getData("GET", "product/getCategories", {},
 					"html/menubar.html", "#menubar-template", "#menubar");

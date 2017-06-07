@@ -3,7 +3,7 @@ var homePage = {
 	init : function() {
 		//alert('homePage-init');
 		this.setUpEvents();
-		$('#empty_cart').click();
+		//$('#empty_cart').click();
 	},
 
 	setUpEvents : function() {
@@ -44,6 +44,7 @@ var homePage = {
 		$("#empty_cart").click(function(e) {
 			checkoutPage.cartData.product = [];
 			checkoutPage.cartData.total = 0;
+			utility.setTemplate("html/checkout.html","#main-body");
 			e.preventDefault();
 		});
 	}

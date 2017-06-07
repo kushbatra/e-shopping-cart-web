@@ -1,5 +1,6 @@
 //Custom namespace handler
 var utility = {
+		//get data from REST service and apply on page based on htmlPath, templateName and divId
 	getData : function(type, url, data, htmlPath, templateName, divId) {
 		$.ajax({
 			type : type,
